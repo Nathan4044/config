@@ -37,8 +37,8 @@ lsp.on_attach(function(_, bufnr) -- _ is client
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 
     vim.keymap.set("n", "<leader>d", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
 
     vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
