@@ -8,4 +8,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>tn", vim.cmd.tabnew)
+-- create new tab that copies the current window
+vim.keymap.set("n", "<leader>tn", function()
+    vim.cmd.tabnew { args = { '%' } }
+end)
+
+vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
