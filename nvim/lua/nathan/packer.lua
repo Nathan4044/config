@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
 
 	use('ThePrimeagen/harpoon')
 	use('mbbill/undotree')
-	use('tpope/vim-fugitive')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -52,4 +51,12 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
+    use({
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
 end)
