@@ -3,6 +3,7 @@ if status is-interactive
     set -gx emacs
     set -gx EDITOR nvim
     set -gx VISUAL $EDITOR
+    set -U fish_greeting
 
     function ls
         command ls -aG $argv
