@@ -47,8 +47,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # History configurations
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=20000
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
@@ -102,10 +102,10 @@ configure_prompt() {
 
 # The following block is surrounded by two delimiters.
 # These delimiters must not be modified. Thanks.
-# START KALI CONFIG VARIABLES
+# START CONFIG VARIABLES
 PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
-# STOP KALI CONFIG VARIABLES
+# STOP CONFIG VARIABLES
 
 if [ "$color_prompt" = yes ]; then
     # override default virtualenv indicator in prompt
@@ -208,8 +208,6 @@ precmd() {
 # enable color support of ls, less and man, and also add handy aliases
 export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
 
-alias ls='ls --color=auto -G'
-
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -228,8 +226,9 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
-# some more ls aliases
-alias ll='ls -l'
+# ls aliases
+alias ls='ls --color=auto -G'
+alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -254,3 +253,5 @@ fi
 # editor aliases
 alias vim=nvim
 alias view='nvim -R'
+
+alias python=python3
