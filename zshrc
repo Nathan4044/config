@@ -228,7 +228,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 # ls aliases
 alias ls='ls --color=auto -G'
-alias ll='ls -la'
+alias ll='ls -lha'
 alias la='ls -A'
 alias l='ls -CF'
 
