@@ -14,8 +14,7 @@ return {
     config = function()
         -- Add cmp_nvim_lsp capabilities settings to lspconfig
         -- This should be executed before you configure any language server
-        local lspconfig = require('lspconfig')
-        local lspconfig_defaults = lspconfig.util.default_config
+        local lspconfig_defaults = require('lspconfig').util.default_config
 
         lspconfig_defaults.capabilities = vim.tbl_deep_extend(
             'force',
@@ -23,7 +22,7 @@ return {
             require('cmp_nvim_lsp').default_capabilities()
         )
 
-        lspconfig.lua_ls.setup {
+        vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
                     runtime = {
@@ -48,20 +47,22 @@ return {
                     },
                 },
             },
-        }
+        })
+        vim.lsp.enable { "lua_ls" }
 
-        lspconfig.clangd.setup {
+        vim.lsp.config("clangd", {
             cmd = {
                 "clangd",
                 "--fallback-style=webkit"
             }
-        }
+        })
+        vim.lsp.enable { "clangd" }
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
             handlers = {
                 function(server_name)
-                    lspconfig[server_name].setup({})
+                    vim.lsp.config(server_name, {})
                 end,
             },
         })
