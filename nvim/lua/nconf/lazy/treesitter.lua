@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
 
     config = function()
-        require("nvim-treesitter.configs").setup({
+        require("nvim-treesitter").setup({
             -- A list of parser names, or "all" (the three listed parsers should always be installed)
             ensure_installed = { "c", "lua", "go" },
 
