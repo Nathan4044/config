@@ -257,3 +257,7 @@ alias view='nvim -R'
 alias python=python3
 
 alias crun='c99 -xc - -lm -g -Wall -include ~/.config/allheads.h -O3'
+
+mkcd() {
+    mkdir -p $1 && cd $1
+}
