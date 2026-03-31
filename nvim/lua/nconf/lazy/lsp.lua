@@ -79,7 +79,7 @@ return {
                 vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
                 vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
                 vim.keymap.set("n", "go", function() vim.lsp.buf.type_definition() end, opts)
-                vim.keymap.set("n", "fm", function() vim.lsp.buf.format({ async = true }) end, opts)
+                vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = true }) end, opts)
 
                 vim.keymap.set("n", "<leader>d", function() vim.diagnostic.open_float() end, opts)
                 vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
